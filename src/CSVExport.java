@@ -23,9 +23,6 @@ public class CSVExport {
     public void tester(){
         FileResource fr =new FileResource();
         CSVParser parser = fr.getCSVParser();
-        String info = countryInfo(parser,"France");
-        if(info.isEmpty()){
-            System.out.println("Not found");
-        }
+        countryInfo(parser,"France");
     }
 }
