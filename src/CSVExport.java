@@ -57,11 +57,11 @@ public class CSVExport {
     public void tester(){
         FileResource fr =new FileResource();
         CSVParser parser = fr.getCSVParser();
-//        String countryInfo = countryInfo(parser,"Germany");
+//        String countryInfo = countryInfo(parser,"Nauru");
 //        System.out.println(countryInfo);
 //        listExportersTwoProducts(parser, "diamonds", "gold");
-        bigExporters(parser, "$4,000,000,000");
-//        int numberOfExporters=numberOfExporters(parser, "gold");
+        bigExporters(parser, "$999,999,999,999");
+//        int numberOfExporters=numberOfExporters(parser, "sugar");
 //        System.out.println("Number of exporters is "+ numberOfExporters);
     }
 }
