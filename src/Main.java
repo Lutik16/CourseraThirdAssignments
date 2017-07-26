@@ -11,6 +11,7 @@ public class Main {
        // CSVExport test = new CSVExport();
        // test.tester();
         WeatherData test = new WeatherData();
-        test.testColdestInDay();
+        //test.testColdestInDay();
+        test.testFileWithColdestTemperature();
     }
 }
