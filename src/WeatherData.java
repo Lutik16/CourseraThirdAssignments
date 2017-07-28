@@ -49,9 +49,14 @@ public class WeatherData {
         return coldestSoFar;
     }
 
-   /* public String fileWithColdestTemperature(){
-        String nameOfFile = coldestInManyDays()
-    }*/
+    //Method that prints all temperatures on the day
+   public void allTemperaturesInDay (CSVParser parser){
+       for (CSVRecord currentRow: parser){
+           double currentTemp = Double.parseDouble(currentRow.get("TemperatureF"));
+           System.out.println(currentRow.get("DateUTC") + currentTemp);
+       }
+   }
+
    public String fileWithColdestTemperature(){
        DirectoryResource dr = new DirectoryResource();
        String fileName = null;
@@ -67,13 +72,16 @@ public class WeatherData {
    }
 
    public void testFileWithColdestTemperature(){
+       // Find a file with the coldest temperature
        String coldestTempFileName = fileWithColdestTemperature();
+       // Print a name of the file with the coldest temperature
        System.out.println("Coldest day was in file "+ coldestTempFileName);
+       //Find and print the coldest temperature in this file (day)
        FileResource file = new FileResource(coldestTempFileName);
        CSVRecord coldest = coldestHourInFile(file.getCSVParser());
        System.out.println("Coldest temperature on that day was "+ coldest.get("TemperatureF"));
+       //Print all temperatures on that day
        System.out.println("All the temperatures on the coldest day were: " );
-
-
+       allTemperaturesInDay(file.getCSVParser());
    }
 }
